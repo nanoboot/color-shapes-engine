@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="gameDto" type="gameType"/>
+  <xs:complexType name="sessionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="started"/>
+      <xs:element type="xs:string" name="ended"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="playerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="nick"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="surname"/>
+      <xs:element type="xs:string" name="sex"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="holeType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="row"/>
+      <xs:element type="xs:byte" name="column"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="holesType">
+    <xs:sequence>
+      <xs:element type="holeType" name="hole" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shapeType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="height"/>
+      <xs:element type="xs:byte" name="width"/>
+      <xs:element type="holesType" name="holes"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="boardCompositionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:byte" name="gridProbability"/>
+      <xs:element type="xs:byte" name="gridCount"/>
+      <xs:element type="xs:byte" name="wallProbability"/>
+      <xs:element type="xs:byte" name="wallCount"/>
+      <xs:element type="shapeType" name="shape"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="colourFrequencyType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="colourNumber"/>
+      <xs:element type="xs:byte" name="frequency"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="colourFrequenciesType">
+    <xs:sequence>
+      <xs:element type="colourFrequencyType" name="colourFrequency"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="valueFrequencyType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="valueNumber"/>
+      <xs:element type="xs:byte" name="frequency"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="valueFrequenciesType">
+    <xs:sequence>
+      <xs:element type="valueFrequencyType" name="valueFrequencies"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ballFactoryCompositionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="colourFrequenciesType" name="colourFrequencies"/>
+      <xs:element type="valueFrequenciesType" name="valueFrequencies"/>
+      <xs:element type="xs:byte" name="colourfulBallFrequency"/>
+      <xs:element type="xs:byte" name="jokerBallFrequency"/>
+      <xs:element type="xs:byte" name="unmoveableBallFrequency"/>
+      <xs:element type="xs:byte" name="unbreakableBallFrequency"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ballThrowerCompositionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:byte" name="countOfBallsThrownAtTheBeginningOfTheGame"/>
+      <xs:element type="xs:byte" name="countOfBallsThrowingDuringTheGame"/>
+      <xs:element type="xs:byte" name="ballFrequency"/>
+      <xs:element type="xs:byte" name="automaticBombFrequency"/>
+      <xs:element type="xs:byte" name="manualBombFrequency"/>
+      <xs:element type="xs:byte" name="showThePositionsOfTheNextBalls"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placeType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="row"/>
+      <xs:element type="xs:byte" name="column"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="placesType">
+    <xs:sequence>
+      <xs:element type="placeType" name="place"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="customExplodingShapeType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:byte" name="width"/>
+      <xs:element type="xs:byte" name="height"/>
+      <xs:element type="placesType" name="places"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ballDetonatorCompositionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="explodingShapeType"/>
+      <xs:element type="xs:byte" name="minimumLineLenght"/>
+      <xs:element type="xs:byte" name="minimumBlockSize"/>
+      <xs:element type="customExplodingShapeType" name="customExplodingShape"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="otherCompositionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="allowedStepBack"/>
+      <xs:element type="xs:string" name="freeMode"/>
+      <xs:element type="xs:string" name="trainer"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gameCompositionType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="boardCompositionType" name="boardComposition"/>
+      <xs:element type="ballFactoryCompositionType" name="ballFactoryComposition"/>
+      <xs:element type="ballThrowerCompositionType" name="ballThrowerComposition"/>
+      <xs:element type="ballDetonatorCompositionType" name="ballDetonatorComposition"/>
+      <xs:element type="otherCompositionType" name="otherComposition"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="randomGeneratorType">
+    <xs:sequence>
+      <xs:element type="xs:int" name="magicNumber"/>
+      <xs:element type="xs:string" name="magicDateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="activatedCellType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="row"/>
+      <xs:element type="xs:string" name="column"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actionType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="actionOrder"/>
+      <xs:element type="xs:string" name="time"/>
+      <xs:element type="activatedCellType" name="activatedCell"/>
+      <xs:element type="xs:string" name="result"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actionsType">
+    <xs:sequence>
+      <xs:element type="actionType" name="action"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gameType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="sessionType" name="session"/>
+      <xs:element type="playerType" name="playerDto"/>
+      <xs:element type="gameCompositionType" name="gameComposition"/>
+      <xs:element type="randomGeneratorType" name="randomGenerator"/>
+      <xs:element type="xs:string" name="totalScore"/>
+      <xs:element type="actionsType" name="actions"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
