@@ -1,0 +1,11 @@
+#files to ignore
+
+**.metadata/**
+**.recommenders/**
+target
+**build/**
+*.idea/**
+*.iml
+
+nbactions.xml
+nb-configuration.xml
