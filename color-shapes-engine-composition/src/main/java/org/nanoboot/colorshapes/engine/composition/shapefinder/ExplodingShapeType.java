@@ -21,7 +21,7 @@
 package org.nanoboot.colorshapes.engine.composition.shapefinder;
 
 import lombok.Getter;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 
 /**
  *

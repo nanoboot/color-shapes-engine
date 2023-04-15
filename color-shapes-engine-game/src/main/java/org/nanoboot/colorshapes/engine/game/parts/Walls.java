@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.game.parts;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.flow.event.impl.wall.*;
 import org.nanoboot.colorshapes.engine.game.utils.Direction;
 import org.nanoboot.colorshapes.engine.game.core.GameNode;

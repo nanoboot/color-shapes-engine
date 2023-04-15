@@ -18,21 +18,29 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.engine.core.misc;
+package org.nanoboot.colorshapes.engine.entity.misc;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
+ *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class Task extends Thread { //NOSONAR
+public class TaskTest {
+    class TestRunnable implements Runnable {
 
-    /**
-     * @param taskName task name
-     * @param runnable runnable class
-     */
-    public Task(final String taskName, final Runnable runnable) {
-        super(runnable, taskName);
-        this.setDaemon(true);
-        this.start();
+        @Override
+        public void run() {
+
+        }
+    }
+    @Test
+    public void constructor_String_Runnable() {
+        Task task = new Task("test1", new TestRunnable());
+        assertEquals("test1", task.getName());
+
     }
 }

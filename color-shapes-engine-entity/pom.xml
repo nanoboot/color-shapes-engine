@@ -52,14 +52,13 @@
             <artifactId>power-utils</artifactId>
             <version>${power.version}</version>
         </dependency>
-        <!-- Color Shapes Engine dependencies -->
         <dependency>
-            <groupId>org.nanoboot.colorshapes</groupId>
-            <artifactId>color-shapes-engine-core</artifactId>
-            <version>${color-shapes-engine.version}</version>
-            <scope>compile</scope>
+            <groupId>org.nanoboot.powerframework</groupId>
+            <artifactId>power-random</artifactId>
+            <version>${power.version}</version>
         </dependency>
         <!-- Color Shapes Engine dependencies -->
+
 
         <!-- Other dependencies -->
     </dependencies>

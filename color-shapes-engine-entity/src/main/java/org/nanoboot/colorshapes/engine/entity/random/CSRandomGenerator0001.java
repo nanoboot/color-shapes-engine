@@ -18,33 +18,40 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.engine.core.misc;
+package org.nanoboot.colorshapes.engine.entity.random;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.nanoboot.powerframework.time.moment.UniversalDateTime;
 
 /**
+ * 0001 random generator.
  *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class ColorShapesEngineExceptionTest {
-    @Test
-    public void constructorMessage() {
-        try {
-            throw new ColorShapesEngineException("testMsg");
-        } catch (ColorShapesEngineException e) {
-            assertEquals("testMsg", e.getMessage());
-        }
-    }
-    @Test
-    public void constructorException() {
-        try {
-            throw new ColorShapesEngineException(new RuntimeException("testMsg"));
-        } catch (ColorShapesEngineException e) {
+public class CSRandomGenerator0001 extends AbstractCSRandomGenerator {
 
-            assertEquals("testMsg", e.getCause().getMessage());
-        }
+    /**
+     * Code of this generator.
+     */
+    public static final String GENERATOR_CODE = "0001";
+
+    /**
+     * RandomNumberGenerator for Color Shapes application.
+     *
+     * @param magicNumber magic number
+     * @param udt         date time
+     */
+    public CSRandomGenerator0001(
+            final long magicNumber,
+            final UniversalDateTime udt) {
+        super(magicNumber, udt);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getCode() {
+        return GENERATOR_CODE;
     }
 }

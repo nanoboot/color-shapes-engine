@@ -18,21 +18,32 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.engine.core.random;
+package org.nanoboot.colorshapes.engine.entity.exceptions;
 
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 /**
- * CS random generator.
  *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public interface CSRandomGenerator extends org.nanoboot.powerframework.random.generators.RandomGenerator {
-    /**
-     * Returns code of the generator.
-     *
-     * @return code of this generator
-     */
-    default String getCode() {
-        return getName();
+public class ColorShapesEngineExceptionTest {
+    @Test
+    public void constructorMessage() {
+        try {
+            throw new ColorShapesEngineException("testMsg");
+        } catch (ColorShapesEngineException e) {
+            assertEquals("testMsg", e.getMessage());
+        }
+    }
+    @Test
+    public void constructorException() {
+        try {
+            throw new ColorShapesEngineException(new RuntimeException("testMsg"));
+        } catch (ColorShapesEngineException e) {
+
+            assertEquals("testMsg", e.getCause().getMessage());
+        }
     }
 }

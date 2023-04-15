@@ -59,12 +59,7 @@
             <version>${power.version}</version>
         </dependency>
         <!-- Color Shapes Engine dependencies -->
-        <dependency>
-            <groupId>org.nanoboot.colorshapes</groupId>
-            <artifactId>color-shapes-engine-core</artifactId>
-            <version>${color-shapes-engine.version}</version>
-            <scope>compile</scope>
-        </dependency>
+
         <dependency>
             <groupId>org.nanoboot.colorshapes</groupId>
             <artifactId>color-shapes-engine-entity</artifactId>

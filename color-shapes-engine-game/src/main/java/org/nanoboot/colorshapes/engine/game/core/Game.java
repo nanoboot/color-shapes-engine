@@ -21,9 +21,9 @@
 package org.nanoboot.colorshapes.engine.game.core;
 
 import org.nanoboot.colorshapes.engine.composition.GameComposition;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
-import org.nanoboot.colorshapes.engine.core.misc.Task;
-import org.nanoboot.colorshapes.engine.core.random.CSRandomGenerator;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.misc.Task;
+import org.nanoboot.colorshapes.engine.entity.random .CSRandomGenerator;
 import org.nanoboot.colorshapes.engine.entity.core.GameDto;
 import org.nanoboot.colorshapes.engine.flow.event.core.Event;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;

@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.composition.utils;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.powerframework.collections.PowerList;
 import org.nanoboot.powerframework.json.JsonObject;
 import org.junit.Before;

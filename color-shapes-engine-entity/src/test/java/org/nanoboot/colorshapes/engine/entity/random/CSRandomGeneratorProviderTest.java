@@ -18,8 +18,9 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.engine.core.misc;
+package org.nanoboot.colorshapes.engine.entity.random;
 
+import org.nanoboot.powerframework.time.moment.UniversalDateTime;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -29,18 +30,16 @@ import static org.junit.Assert.*;
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class TaskTest {
-    class TestRunnable implements Runnable {
+public class CSRandomGeneratorProviderTest {
 
-        @Override
-        public void run() {
-
-        }
-    }
     @Test
-    public void constructor_String_Runnable() {
-        Task task = new Task("test1", new TestRunnable());
-        assertEquals("test1", task.getName());
+    public void lookup() {
+        assertEquals("0001", CSRandomGeneratorProvider.lookup("0001", 100, UniversalDateTime.now()).getCode());
+        assertNull(CSRandomGeneratorProvider.lookup("0999", 100, UniversalDateTime.now()));
+    }
 
+    @Test
+    public void lookupDefault() {
+        assertEquals("0001", CSRandomGeneratorProvider.lookupDefault(100, UniversalDateTime.now()).getCode());
     }
 }

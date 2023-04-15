@@ -29,7 +29,6 @@ module colorshapes.engine.composition {
     requires powerframework.random;
     requires powerframework.collections;
     requires powerframework.reflection;
-    requires colorshapes.engine.core;
     requires colorshapes.engine.entity;
     exports org.nanoboot.colorshapes.engine.composition;
     exports org.nanoboot.colorshapes.engine.composition.utils;

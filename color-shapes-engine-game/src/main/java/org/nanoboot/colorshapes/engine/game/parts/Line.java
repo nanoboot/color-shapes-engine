@@ -21,8 +21,8 @@
 package org.nanoboot.colorshapes.engine.game.parts;
 
 import org.nanoboot.colorshapes.engine.composition.thrower.BallThrowerComposition;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
-import org.nanoboot.colorshapes.engine.core.random.CSRandomGenerator;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.random .CSRandomGenerator;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 import org.nanoboot.colorshapes.engine.flow.event.impl.add.AddNextAutomaticBombEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.add.AddNextBallEvent;

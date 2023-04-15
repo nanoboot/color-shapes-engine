@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.game.tools;
 
-import org.nanoboot.colorshapes.engine.core.random.CSRandomGenerator;
+import org.nanoboot.colorshapes.engine.entity.random .CSRandomGenerator;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 import org.nanoboot.colorshapes.engine.game.core.GameNode;
 import org.nanoboot.colorshapes.engine.game.parts.BallPosition;

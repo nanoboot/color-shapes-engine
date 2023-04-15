@@ -18,13 +18,39 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.engine.infrastructure;
+package org.nanoboot.colorshapes.engine.entity.random;
+
+import org.nanoboot.powerframework.random.generators.RandomGenerator;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class ClassicEngine {
-   private Engine engine;
+public class CSRandomGeneratorTest {
+
+    @Test
+    public void getCode() {
+        class CSRandomGeneratorImpl implements CSRandomGenerator {
+
+            @Override
+            public long next() {
+                return 0;
+            }
+
+            @Override
+            public RandomGenerator getItself() {
+                return this;
+            }
+
+            @Override
+            public String getName() {
+                return "nameA";
+            }
+        }
+        assertEquals("nameA", new CSRandomGeneratorImpl().getCode());
+    }
 }

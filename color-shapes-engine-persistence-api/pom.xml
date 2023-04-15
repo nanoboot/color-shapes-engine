@@ -49,12 +49,6 @@
             <version>${color-shapes-engine.version}</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.nanoboot.colorshapes</groupId>
-            <artifactId>color-shapes-engine-core</artifactId>
-            <version>${color-shapes-engine.version}</version>
-            <scope>compile</scope>
-        </dependency>
         <!-- Other dependencies -->
     </dependencies>
 

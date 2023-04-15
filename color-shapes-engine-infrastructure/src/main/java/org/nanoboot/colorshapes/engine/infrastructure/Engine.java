@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.infrastructure;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.entity.core.PlayerDto;
 import org.nanoboot.colorshapes.engine.services.utils.RegistrationError;
 import lombok.Getter;

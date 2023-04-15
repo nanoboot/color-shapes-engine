@@ -21,7 +21,7 @@
 package org.nanoboot.colorshapes.engine.entity.misc;
 
 import org.nanoboot.colorshapes.engine.entity.misc.BallValue;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

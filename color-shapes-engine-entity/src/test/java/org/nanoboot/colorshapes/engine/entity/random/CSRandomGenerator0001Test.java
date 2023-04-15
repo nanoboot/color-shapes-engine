@@ -18,10 +18,22 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+package org.nanoboot.colorshapes.engine.entity.random;
+
+import org.nanoboot.powerframework.time.moment.UniversalDateTime;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
 /**
- * Core classes.
  *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-package org.nanoboot.colorshapes.engine.core;
+public class CSRandomGenerator0001Test {
+
+    @Test
+    public void getCode() {
+        assertEquals("0001", new CSRandomGenerator0001(500, UniversalDateTime.now()).getCode());
+    }
+}

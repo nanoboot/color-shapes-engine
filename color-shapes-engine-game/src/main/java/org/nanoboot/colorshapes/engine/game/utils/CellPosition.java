@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.game.utils;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.game.parts.Board;
 import org.nanoboot.colorshapes.engine.game.parts.Cell;
 import lombok.Getter;

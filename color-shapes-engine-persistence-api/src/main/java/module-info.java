@@ -27,5 +27,4 @@ module colorshapes.engine.persistence.api {
     exports org.nanoboot.colorshapes.engine.persistence.api;
     requires colorshapes.engine.entity;
     requires colorshapes.engine.composition;
-    requires colorshapes.engine.core;
 }

@@ -18,10 +18,21 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
+package org.nanoboot.colorshapes.engine.entity.misc;
+
 /**
- * Misc core tools for Color Shapes Engine.
- *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-package org.nanoboot.colorshapes.engine.core.misc;
+public class Task extends Thread { //NOSONAR
+
+    /**
+     * @param taskName task name
+     * @param runnable runnable class
+     */
+    public Task(final String taskName, final Runnable runnable) {
+        super(runnable, taskName);
+        this.setDaemon(true);
+        this.start();
+    }
+}

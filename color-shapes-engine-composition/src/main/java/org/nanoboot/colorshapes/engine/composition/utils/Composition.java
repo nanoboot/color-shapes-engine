@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.powerframework.json.JsonObject;
 import org.nanoboot.powerframework.json.JsonObjectSerializable;
 import org.nanoboot.powerframework.random.generators.RandomGenerator;

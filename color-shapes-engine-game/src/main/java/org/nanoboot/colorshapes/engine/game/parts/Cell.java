@@ -31,7 +31,7 @@ import org.nanoboot.colorshapes.engine.flow.event.impl.inflate.InflateBallEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.lock.LockCellEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.lock.UnlockCellEvent;
 import lombok.Getter;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.game.utils.Direction;
 import org.nanoboot.powerframework.json.JsonObject;
 

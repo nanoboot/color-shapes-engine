@@ -23,7 +23,7 @@ package org.nanoboot.colorshapes.engine.persistence.api;
 import java.util.UUID;
 import org.nanoboot.colorshapes.engine.composition.AbstractComposition;
 import org.nanoboot.colorshapes.engine.composition.GameComposition;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.entity.core.GameCompositionDto;
 
 /**

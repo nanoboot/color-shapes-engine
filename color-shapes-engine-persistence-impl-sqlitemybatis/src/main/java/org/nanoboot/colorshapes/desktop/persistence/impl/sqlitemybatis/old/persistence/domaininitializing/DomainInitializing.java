@@ -21,7 +21,7 @@
 package org.nanoboot.colorshapes.desktop.persistence.impl.powper.old.persistence.domaininitializing;
 
 import org.nanoboot.colorshapes.desktop.persistence.impl.powper.old.persistence.*;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.desktop.persistence.impl.powper.old.persistence.ApplicationTable;
 import org.nanoboot.colorshapes.desktop.persistence.impl.powper.old.persistence.BallDetonatorTable;
 import org.nanoboot.colorshapes.desktop.persistence.impl.powper.old.persistence.BallFactoryTable;

@@ -20,7 +20,6 @@
 
 package org.nanoboot.colorshapes.engine.entity.misc;
 
-import org.nanoboot.colorshapes.engine.entity.misc.BallColour;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

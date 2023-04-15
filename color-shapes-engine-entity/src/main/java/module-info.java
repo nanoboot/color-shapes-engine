@@ -28,7 +28,9 @@ module colorshapes.engine.entity {
     requires powerframework.utils;
     requires powerframework.time;
     requires powerframework.json;
-    requires colorshapes.engine.core;
+    requires powerframework.random;
     exports org.nanoboot.colorshapes.engine.entity.core;
+    exports org.nanoboot.colorshapes.engine.entity.exceptions;
+    exports org.nanoboot.colorshapes.engine.entity.random;
     exports org.nanoboot.colorshapes.engine.entity.misc;
 }

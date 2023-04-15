@@ -18,35 +18,21 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.engine.core.random;
-
-import org.nanoboot.powerframework.time.moment.UniversalDateTime;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+package org.nanoboot.colorshapes.engine.entity.random;
 
 /**
+ * CS random generator.
  *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class AbstractCSRandomGeneratorTest {
-
-    @Test
-    public void constructor_magicNumber_udt() {
-        class AbstractCSRandomGeneratorImpl extends AbstractCSRandomGenerator {
-
-            /**
-             * Constructor.
-             * RandomNumberGenerator for Color Shapes application.
-             *
-             * @param magicNumberIn magic number
-             * @param udtIn         date time
-             */
-            public AbstractCSRandomGeneratorImpl(long magicNumberIn, UniversalDateTime udtIn) {
-                super(magicNumberIn, udtIn);
-            }
-        }
-        assertNotNull(new AbstractCSRandomGeneratorImpl(100, UniversalDateTime.now()));
+public interface CSRandomGenerator extends org.nanoboot.powerframework.random.generators.RandomGenerator {
+    /**
+     * Returns code of the generator.
+     *
+     * @return code of this generator
+     */
+    default String getCode() {
+        return getName();
     }
 }

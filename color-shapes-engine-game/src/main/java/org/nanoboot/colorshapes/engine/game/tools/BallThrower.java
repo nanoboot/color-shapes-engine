@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.game.tools;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 import org.nanoboot.colorshapes.engine.flow.event.impl.misc.EndGameEvent;
 import org.nanoboot.colorshapes.engine.game.core.GameNode;

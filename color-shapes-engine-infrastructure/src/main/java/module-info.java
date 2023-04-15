@@ -25,7 +25,6 @@
  */
 module colorshapes.engine.infrastructure {
     exports org.nanoboot.colorshapes.engine.infrastructure;
-    requires colorshapes.engine.core;
     requires colorshapes.engine.game;
     requires lombok;
     requires colorshapes.engine.entity;

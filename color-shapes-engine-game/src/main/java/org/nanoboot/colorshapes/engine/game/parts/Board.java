@@ -21,7 +21,7 @@
 package org.nanoboot.colorshapes.engine.game.parts;
 
 import org.nanoboot.colorshapes.engine.composition.board.shape.BoardShape;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 import org.nanoboot.colorshapes.engine.game.core.GameNode;
 

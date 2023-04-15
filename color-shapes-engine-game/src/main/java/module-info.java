@@ -30,7 +30,6 @@ module colorshapes.engine.game {
     requires powerframework.random;
     requires colorshapes.engine.entity;
     requires colorshapes.engine.flow;
-    requires colorshapes.engine.core;
     requires colorshapes.engine.composition;
     exports org.nanoboot.colorshapes.engine.game.parts;
     exports org.nanoboot.colorshapes.engine.game.core;

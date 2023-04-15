@@ -18,40 +18,32 @@
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-package org.nanoboot.colorshapes.engine.core.random;
-
-import org.nanoboot.powerframework.time.moment.UniversalDateTime;
+package org.nanoboot.colorshapes.engine.entity.exceptions;
 
 /**
- * 0001 random generator.
+ * Exception for ColorShapes engine.
  *
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class CSRandomGenerator0001 extends AbstractCSRandomGenerator {
+public class ColorShapesEngineException extends RuntimeException {
 
     /**
-     * Code of this generator.
-     */
-    public static final String GENERATOR_CODE = "0001";
-
-    /**
-     * RandomNumberGenerator for Color Shapes application.
+     * Constructor with message.
      *
-     * @param magicNumber magic number
-     * @param udt         date time
+     * @param message message of the exception
      */
-    public CSRandomGenerator0001(
-            final long magicNumber,
-            final UniversalDateTime udt) {
-        super(magicNumber, udt);
+    public ColorShapesEngineException(final String message) {
+        super(message);
     }
 
     /**
-     * {@inheritDoc}
+     * Constructor with exception.
+     *
+     * @param e exception
      */
-    @Override
-    public String getCode() {
-        return GENERATOR_CODE;
+    public ColorShapesEngineException(final Exception e) {
+        super(e);
     }
+
 }

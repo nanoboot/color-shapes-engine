@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.game.pathfinder;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.game.parts.Cell;
 import org.nanoboot.colorshapes.engine.game.utils.Direction;
 import org.nanoboot.powerframework.collections.PowerList;

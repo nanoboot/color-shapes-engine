@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.entity.misc;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import lombok.Getter;
 
 /**

@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.composition.shapefinder;
 
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

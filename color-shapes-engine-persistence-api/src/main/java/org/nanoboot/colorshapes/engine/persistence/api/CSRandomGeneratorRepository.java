@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.persistence.api;
 
-import org.nanoboot.colorshapes.engine.core.random.AbstractCSRandomGenerator;
+import org.nanoboot.colorshapes.engine.entity.random .AbstractCSRandomGenerator;
 import org.nanoboot.colorshapes.engine.entity.core.GameEventDto;
 
 /**

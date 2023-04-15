@@ -23,7 +23,7 @@ package org.nanoboot.colorshapes.engine.game.parts;
 import org.nanoboot.colorshapes.engine.game.BallType;
 import lombok.Getter;
 import lombok.Setter;
-import org.nanoboot.colorshapes.engine.core.misc.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
 import org.nanoboot.powerframework.json.JsonObject;
 
 import java.util.UUID;

@@ -37,7 +37,6 @@
     <description>Engine - Logic game based on Color linez game</description>
 
     <modules>
-        <module>color-shapes-engine-core</module>
         <module>color-shapes-engine-entity</module>
         <module>color-shapes-engine-composition</module>
         <module>color-shapes-engine-flow</module>
@@ -48,8 +47,8 @@
         <module>color-shapes-engine-localisation-api</module>
         <module>color-shapes-engine-services</module>
         <module>color-shapes-engine-infrastructure</module>
-        <module>color-shapes-engine-strategy</module>
-        <module>color-shapes-engine-analysis</module>
+<!--        <module>color-shapes-engine-strategy</module>
+        <module>color-shapes-engine-analysis</module>-->
 
     </modules>
     <properties>
