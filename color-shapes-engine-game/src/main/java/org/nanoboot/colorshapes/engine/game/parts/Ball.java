@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -43,74 +43,71 @@ public abstract class Ball{
      * Ball type.
      */
     @Getter
-    @Setter
-    private BallType ballType;
+    private final BallType ballType;
 
     /**
      * colour.
      */
     @Getter
-    @Setter
-    private int colour;
+    private final int colour;
     /**
      * value.
      */
     @Getter
-    @Setter
-    private int value;
+    private final int value;
 
     /**
      * movable.
      */
     @Getter
-    @Setter
-    private boolean movable;
+    private final boolean movable;
     /**
      * breakable.
      */
     @Getter
-    @Setter
-    private boolean breakable;
+    private final boolean breakable;
     @Getter
+    @Setter
     private boolean exploded;
 
     /**
      *
-     * @param ballType ballType of the ball
+     * @param ballTypeIn ballType of the ball
      * @param colourIn colour of the ball
      * @param valueIn value of the ball
      * @param movableIn moveable of the ball
      * @param breakableIn breakable of the ball
      */
     public Ball(
-            final BallType ballType,
+            final BallType ballTypeIn,
             final int colourIn,
             final int valueIn,
             final boolean movableIn,
             final boolean breakableIn) {
 
-        if (!isColourValid(colour)) {
+        if (!isColourValid(colourIn)) {
             throw new ColorShapesEngineException("Colour must be between 0 and 16.");
         }
         this.colour = colourIn;
-        if (!isValueValid(value)) {
+        if (!isValueValid(valueIn)) {
             throw new ColorShapesEngineException("Value is out of range <-2;2>.");
         }
         this.value = valueIn;
         this.movable = movableIn;
         this.breakable = movableIn;
-        if(ballType.isColored() && colour == 0) {
-            throw new ColorShapesEngineException("Ball type is standard, but colour is 0.");
+        if(ballTypeIn.isColored() && colour == 0) {
+            throw new ColorShapesEngineException("Ball type is colored, but colour is 0.");
         }
-        if(!ballType.isColored() && colour != 0) {
-            throw new ColorShapesEngineException("Ball type is not standard, but colour is not 0.");
+        if(!ballTypeIn.isColored() && colour != 0) {
+            throw new ColorShapesEngineException("Ball type is not colored, but colour is not 0.");
         }
-        if(ballType.isABomb() && !movableIn) {
+        if(ballTypeIn.isABomb() && !movableIn) {
             throw new ColorShapesEngineException("Ball type is bomb, but movable is false.");
         }
-        if(ballType.isABomb() && !breakableIn) {
+        if(ballTypeIn.isABomb() && !breakableIn) {
             throw new ColorShapesEngineException("Ball type is bomb, but breakable is false.");
         }
+        this.ballType = ballTypeIn;
     }
 
     private boolean isColourValid(int colour) {

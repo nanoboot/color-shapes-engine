@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -26,7 +26,7 @@ import org.nanoboot.colorshapes.engine.game.core.GameNode;
 import org.nanoboot.colorshapes.engine.game.parts.BallPosition;
 import org.nanoboot.colorshapes.engine.game.parts.Board;
 import org.nanoboot.colorshapes.engine.game.parts.Cell;
-import org.nanoboot.colorshapes.engine.game.parts.Line;
+import org.nanoboot.colorshapes.engine.game.parts.PreviewBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,14 +39,14 @@ import java.util.List;
  */
 public class BallPositionGenerator extends GameNode {
     private final Board board;
-    private final Line line;
+    private final PreviewBar previewBar;
     private final CSRandomGenerator random;
 
-    public BallPositionGenerator(EventConsumer eventConsumer, CSRandomGenerator random, Board board, Line line) {
+    public BallPositionGenerator(EventConsumer eventConsumer, CSRandomGenerator random, Board board, PreviewBar line) {
         super(eventConsumer);
         this.random = random;
         this.board = board;
-        this.line = line;
+        this.previewBar = line;
     }
 
     public BallPosition generate() {

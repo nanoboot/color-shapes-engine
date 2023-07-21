@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -42,49 +42,49 @@ public class CellFinder {
 
         switch (direction) {
             case TOP:
-                if (!CellPosition.hasPositionCode(cell, 11)) {
+                if (!CellPosition.hasPosition(cell, CellPosition.TOP)) {
                     return board.getCell(cellRow - 1, cellColumn);
                 } else {
                     return null;
                 }
             case RIGHT:
-                if (!CellPosition.hasPositionCode(cell, 12)) {
+                if (!CellPosition.hasPosition(cell, CellPosition.RIGHT)) {
                     return board.getCell(cellRow, cellColumn + 1);
                 } else {
                     return null;
                 }
             case BOTTOM:
-                if (!CellPosition.hasPositionCode(cell, 13)) {
+                if (!CellPosition.hasPosition(cell, CellPosition.BOTTOM)) {
                     return board.getCell(cellRow + 1, cellColumn);
                 } else {
                     return null;
                 }
             case LEFT:
-                if (!CellPosition.hasPositionCode(cell, 14)) {
+                if (!CellPosition.hasPosition(cell, CellPosition.LEFT)) {
                     return board.getCell(cellRow, cellColumn - 1);
                 } else {
                     return null;
                 }
             case TOP_RIGHT:
-                if (!CellPosition.hasPositionCode1OrCode2(cell, 11, 12)) {
+                if (!CellPosition.hasPosition1OrPosition2(cell, CellPosition.TOP, CellPosition.RIGHT)) {
                     return board.getCell(cellRow - 1, cellColumn + 1);
                 } else {
                     return null;
                 }
             case BOTTOM_RIGHT:
-                if (!CellPosition.hasPositionCode1OrCode2(cell, 12, 13)) {
+                if (!CellPosition.hasPosition1OrPosition2(cell, CellPosition.BOTTOM, CellPosition.RIGHT)) {
                     return board.getCell(cellRow + 1, cellColumn + 1);
                 } else {
                     return null;
                 }
             case BOTTOM_LEFT:
-                if (!CellPosition.hasPositionCode1OrCode2(cell, 13, 14)) {
+                if (!CellPosition.hasPosition1OrPosition2(cell, CellPosition.BOTTOM, CellPosition.LEFT)) {
                     return board.getCell(cellRow + 1, cellColumn - 1);
                 } else {
                     return null;
                 }
             case TOP_LEFT:
-                if (!CellPosition.hasPositionCode1OrCode2(cell, 14, 11)) {
+                if (!CellPosition.hasPosition1OrPosition2(cell, CellPosition.TOP, CellPosition.LEFT)) {
                     return board.getCell(cellRow - 1, cellColumn - 1);
                 } else {
                     return null;

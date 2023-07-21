@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -38,7 +38,7 @@ public class BallThrower extends GameNode {
 
     private final BallThrowerComposition ballThrowerComposition;
     private final Board board;
-    private final Line line;
+    private final PreviewBar previewBar;
     private final BallPositionerGenerator ballPositionerGenerator;
     private final ShapeFinder shapeFinder;
     private final TotalScore totalScore;
@@ -48,14 +48,14 @@ public class BallThrower extends GameNode {
     public BallThrower(final EventConsumer consumer,
                        BallThrowerComposition ballThrowerComposition,
                        Board board,
-                       Line line,
+                       PreviewBar previewBar,
                        BallPositionerGenerator ballPositionerGenerator,
                        ShapeFinder shapeFinder,
                        TotalScore totalScore) {
         super(consumer);
         this.ballThrowerComposition = ballThrowerComposition;
         this.board = board;
-        this.line = line;
+        this.previewBar = previewBar;
         this.ballPositionerGenerator = ballPositionerGenerator;
         this.shapeFinder = shapeFinder;
         this.totalScore = totalScore;
@@ -103,7 +103,7 @@ public class BallThrower extends GameNode {
         if (!started) {
             throw new ColorShapesEngineException("Game has not yet started.");
         }
-        List<BallPositioner> ballPositioners = line.getAndRefill();
+        List<BallPositioner> ballPositioners = previewBar.getAndRefill();
         for (BallPositioner bp : ballPositioners) {
             if (board.isFull()) {
                 produceEvent(new EndGameEvent(totalScore.getCurrentTotalScore()));

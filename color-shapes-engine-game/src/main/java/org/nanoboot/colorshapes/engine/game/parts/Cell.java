@@ -1,7 +1,6 @@
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -17,13 +16,11 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
 package org.nanoboot.colorshapes.engine.game.parts;
 
 import org.nanoboot.colorshapes.engine.game.BallType;
 import org.nanoboot.colorshapes.engine.game.utils.CellFinder;
 import org.nanoboot.colorshapes.engine.game.core.GameNode;
-import org.nanoboot.colorshapes.engine.flow.event.core.Event;
 import org.nanoboot.colorshapes.engine.flow.event.impl.add.AddAutomaticBombEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.add.AddBallEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.add.AddManualBombEvent;
@@ -41,6 +38,7 @@ import org.nanoboot.powerframework.json.JsonObject;
  * @since 0.0.0
  */
 public class Cell extends GameNode {
+
     /**
      * board.
      */
@@ -93,12 +91,14 @@ public class Cell extends GameNode {
     public boolean isEmpty() {
         return this.ball == null;
     }
+
     /**
      * @return
      */
     public boolean isNotEmpty() {
         return !isEmpty();
     }
+
     public boolean isFull() {
         return isNotEmpty();
     }
@@ -109,32 +109,34 @@ public class Cell extends GameNode {
     public void lock() {
         setLocked(true);
     }
+
     /**
-     * Unlocklock the cell.
+     * Unlock the cell.
      */
     public void unlock() {
         setLocked(false);
     }
+
     /**
      * Lock the cell.
+     *
      * @param value true or false
      */
     private void setLocked(final boolean value) {
         this.locked = value;
-        Event event;
-        if(value) {
-            event = new LockCellEvent(getRow(), getColumn());
-        } else {
-            event = new UnlockCellEvent(getRow(), getColumn());
-        }
-        this.produceEvent(event);
+        this.produceEvent(value
+                ? new LockCellEvent(getRow(), getColumn())
+                : new UnlockCellEvent(getRow(), getColumn())
+        );
     }
+
     /**
      * @return
      */
     public boolean hasAWall() {
         return this.walls.hasAWall();
     }
+
     /**
      * @param insertedBall
      */
@@ -151,13 +153,13 @@ public class Cell extends GameNode {
         this.ball = insertedBall;
 
         if (ball.getBallType().isColored() || ball.getBallType().isJoker()) {
-            produceEvent(new AddBallEvent(getRow(),getColumn(),ball.getColour(), ball.getValue(), ball.isMovable(), ball.isBreakable()));
-            produceEvent(new InflateBallEvent(getRow(),getColumn()));
+            produceEvent(new AddBallEvent(getRow(), getColumn(), ball.getColour(), ball.getValue(), ball.isMovable(), ball.isBreakable()));
+            produceEvent(new InflateBallEvent(getRow(), getColumn()));
         } else if (ball.getBallType().isAutomaticBomb()) {
-                produceEvent(new AddAutomaticBombEvent(getRow(),getColumn()));
-            } else if(ball.getBallType().isManualBomb()) {
-                produceEvent(new AddManualBombEvent(getRow(),getColumn()));
-            } else {
+            produceEvent(new AddAutomaticBombEvent(getRow(), getColumn()));
+        } else if (ball.getBallType().isManualBomb()) {
+            produceEvent(new AddManualBombEvent(getRow(), getColumn()));
+        } else {
             throw new ColorShapesEngineException("Rollable is not ball and is not bomb. This is an illegal state.");
         }
     }
@@ -214,19 +216,20 @@ public class Cell extends GameNode {
      */
     public boolean hasABallAbleToJump() {
         boolean empty = isEmpty();
-        boolean locked = isLocked();
+        boolean isLocked = isLocked();
         boolean unmovable = getBall().isUnmovable();
         BallType ballType = getBall().getBallType();
         boolean automaticBomb = ballType.isAutomaticBomb();
         boolean paintBomb = ballType.isPaintBomb();
         boolean unableToJump = empty
-                || locked
+                || isLocked
                 || unmovable
                 || automaticBomb
                 || paintBomb;
         boolean ableToJump = !unableToJump;
         return ableToJump;
     }
+
     @Override
     public String toString() {
         return "{row: " + row + ", column: " + column + "}";

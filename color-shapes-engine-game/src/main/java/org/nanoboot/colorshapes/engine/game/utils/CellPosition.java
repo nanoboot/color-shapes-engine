@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -83,6 +83,9 @@ public enum CellPosition {
         return positions;
     }
 
+    public static boolean hasPosition(Cell cell, CellPosition cellPosition) {
+        return hasPositionCode(cell, cellPosition.code);
+    }
     /**
      * It examines the position of the cell on the board <br />
      * <pre>
@@ -105,7 +108,7 @@ public enum CellPosition {
      */
     public static boolean hasPositionCode(Cell cell, int code) {//NOSONAR
         Board board = cell.getBoard();
-        if (!((code >= 1) && (code <= 14) && (code != 10))) {
+        if (!isPositionCodeLegal(code)) {
             throw new IllegalArgumentException("Illegal position code.");
         }
 
@@ -146,7 +149,22 @@ public enum CellPosition {
         }
     }
 
+    private static boolean isPositionCodeLegal(int positionCode) {
+         return positionCode >= 1 && positionCode <= 14 && positionCode != 10;
+    }
+        
+        /**
+     * @param cell
+     * @param cellPosition1
+     * @param cellPosition2
+     * @return
+     */
+    public static boolean hasPosition1OrPosition2(Cell cell, CellPosition cellPosition1, CellPosition cellPosition2) {
+        return hasPositionCode1OrCode2(cell, cellPosition1.getCode(), cellPosition2.getCode());
+    }
+    
     /**
+     * @param cell
      * @param code1
      * @param code2
      * @return
@@ -154,4 +172,5 @@ public enum CellPosition {
     public static boolean hasPositionCode1OrCode2(Cell cell, int code1, int code2) {
         return (hasPositionCode(cell, code1)) || (hasPositionCode(cell, code2));
     }
+
 }

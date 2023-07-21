@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -23,9 +23,6 @@ package org.nanoboot.colorshapes.engine.game.tools;
 import org.nanoboot.colorshapes.engine.game.core.Game;
 import org.nanoboot.colorshapes.engine.game.core.GameNode;
 import lombok.Getter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -50,10 +47,10 @@ public class GameTools extends GameNode {
         super(game);
         this.game = game;
         ballFactory = new BallFactory(this.getConsumer(), game.getGameComposition().getBallFactoryComposition(), game.getRandomGenerator());
-        ballPositionGenerator = new BallPositionGenerator(this.getConsumer(),game.getRandomGenerator(),game.getBoard(), game.getLine());
+        ballPositionGenerator = new BallPositionGenerator(this.getConsumer(),game.getRandomGenerator(),game.getBoard(), game.getPreviewBar());
         ballPositionerGenerator = new BallPositionerGenerator(this.getConsumer(), ballFactory,ballPositionGenerator);
         shapeFinder = new ShapeFinder(this.getConsumer(), game.getBoard(), game.getGameComposition().getShapeFinderComposition());
-        ballThrower = new BallThrower(this.getConsumer(), game.getGameComposition().getBallThrowerComposition(), game.getBoard(), game.getLine(), ballPositionerGenerator, shapeFinder, game.getTotalScore());
+        ballThrower = new BallThrower(this.getConsumer(), game.getGameComposition().getBallThrowerComposition(), game.getBoard(), game.getPreviewBar(), ballPositionerGenerator, shapeFinder, game.getTotalScore());
         gridBuilder = new GridBuilder(this.getConsumer(), game.getBoard(), game.getGameComposition().getBoardComposition());
         wallBuilder = new WallBuilder(this.getConsumer(), game.getBoard(), game.getGameComposition().getBoardComposition());
     }

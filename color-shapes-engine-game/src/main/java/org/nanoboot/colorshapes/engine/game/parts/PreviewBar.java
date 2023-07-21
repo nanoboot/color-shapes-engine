@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -40,13 +40,13 @@ import java.util.List;
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class Line extends GameNode {
+public class PreviewBar extends GameNode {
     @Getter
     private final int size;
     private final BallPositionerGenerator ballPositionerGenerator;
     private List<BallPositioner> nextBalls;
 
-    public Line(EventConsumer eventConsumer, CSRandomGenerator random, BallThrowerComposition ballThrowerComposition, BallPositionerGenerator ballPositionerGenerator) {
+    public PreviewBar(EventConsumer eventConsumer, CSRandomGenerator random, BallThrowerComposition ballThrowerComposition, BallPositionerGenerator ballPositionerGenerator) {
         super(eventConsumer);
         this.size = ballThrowerComposition.getNextBallCount().getValue();
         this.ballPositionerGenerator = ballPositionerGenerator;

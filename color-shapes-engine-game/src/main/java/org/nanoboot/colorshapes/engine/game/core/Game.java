@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -70,7 +70,7 @@ public class Game extends GameNode implements EventConsumer {
      * Next board.
      */
     @Getter
-    private final Line line;
+    private final PreviewBar previewBar;
 
 
     @Getter
@@ -111,7 +111,7 @@ public class Game extends GameNode implements EventConsumer {
 //                AbstractCSRandomGenerator.getStaticInstance().next(),
 //                UniversalDateTime.random());
         this.board = new Board(this, gameComposition.getBoardComposition().getBoardShape());
-        this.line = new Line(this,randomGenerator,gameComposition.getBallThrowerComposition(), gameTools.getBallPositionerGenerator());
+        this.previewBar = new PreviewBar(this,randomGenerator,gameComposition.getBallThrowerComposition(), gameTools.getBallPositionerGenerator());
 
         totalScore = new TotalScore(this,gameComposition.getShapeFinderComposition());
         gameTools = new GameTools(this);
