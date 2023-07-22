@@ -26,7 +26,7 @@ import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 import org.nanoboot.colorshapes.engine.flow.event.impl.misc.UpdatePlayerScoreEvent;
 import java.util.List;
 import org.nanoboot.colorshapes.engine.parts.base.GameNode;
-import org.nanoboot.colorshapes.engine.parts.utils.ResultCounter;
+import org.nanoboot.colorshapes.engine.parts.utils.PointCalculator;
 
 /**
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
@@ -66,7 +66,7 @@ public class TotalScore extends GameNode {
             }
         }
 
-        int scoreToAdd = ResultCounter.countScore(ballsToCheck, minimumBallCount);
+        int scoreToAdd = PointCalculator.countScore(ballsToCheck, minimumBallCount);
         if (scoreToAdd != 0) {
             addNewScoreSum(scoreToAdd);
             produceEvent(new UpdatePlayerScoreEvent(this.getCurrentTotalScore()));

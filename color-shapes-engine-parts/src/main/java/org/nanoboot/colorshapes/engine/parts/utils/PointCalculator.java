@@ -30,14 +30,14 @@ import java.util.List;
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class ResultCounter {
+public class PointCalculator {
 
     /**
      * Constructor
      * <p>
      * Not meant to be instantiated.
      */
-    private ResultCounter() {
+    private PointCalculator() {
         //Not meant to be instantiated.
     }
 

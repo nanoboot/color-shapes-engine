@@ -1,4 +1,3 @@
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
 // Copyright (C) 2016-2023 the original author or authors.
@@ -17,7 +16,6 @@
 // along with this program; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
 package org.nanoboot.colorshapes.engine.parts.core;
 
 import org.nanoboot.colorshapes.engine.composition.board.shape.BoardShape;
@@ -26,6 +24,7 @@ import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import org.nanoboot.colorshapes.engine.flow.event.impl.move.MoveEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.jumping.StartJumpingEvent;
@@ -34,7 +33,6 @@ import org.nanoboot.powerframework.collections.PowerStack;
 import org.nanoboot.powerframework.collections.arrays.ObjectArray;
 import org.nanoboot.powerframework.json.JsonArray;
 import org.nanoboot.powerframework.json.JsonObject;
-import lombok.AccessLevel;
 import lombok.Getter;
 import org.nanoboot.colorshapes.engine.parts.base.GameNode;
 
@@ -52,10 +50,11 @@ public class Board extends GameNode {
     private final int width;
     @Getter
     private Cell activatedCell = null;
+    private List<Cell> cellsList = null;
 
     /**
      * @param eventConsumer eventConsumer
-     * @param boardShape    boardShape
+     * @param boardShape boardShape
      */
     public Board(EventConsumer eventConsumer, BoardShape boardShape) {
         super(eventConsumer);
@@ -177,51 +176,36 @@ public class Board extends GameNode {
         return jsonObject;
     }
 
-    @Getter(AccessLevel.PACKAGE)
-    private final List<Cell> cellsWithWalls = new ArrayList<>();
-
+//    @Getter(AccessLevel.PACKAGE)
+//    private final List<Cell> cellsWithWalls = new ArrayList<>();
     public List<Cell> getEmptyCells() {
-        List<Cell> result = new ArrayList<>();
-        for (int row = 1; row <= getHeight(); row++) {
-            for (int column = 1; column <= getWidth(); column++) {
-                Cell cell = getCell(row, column);
-                if(cell.isEmpty()) {
-                    result.add(cell);
-                }
-            }
-        }
-        return result;
+        return getAllCells().stream().filter(c -> c.isEmpty()).toList();
     }
+
     public List<Cell> getLockedCells() {
-        List<Cell> result = new ArrayList<>();
-        for (int row = 1; row <= getHeight(); row++) {
-            for (int column = 1; column <= getWidth(); column++) {
-                Cell cell = getCell(row, column);
-                if(cell.isLocked()) {
-                    result.add(cell);
-                }
-            }
-        }
-        return result;
+        return getAllCells().stream().filter(c -> c.isLocked()).toList();
     }
+
     public List<Cell> getCellsWithWalls() {
-        List<Cell> result = new ArrayList<>();
-        for (int row = 1; row <= getHeight(); row++) {
-            for (int column = 1; column <= getWidth(); column++) {
-                Cell cell = getCell(row, column);
-                if(cell.hasAWall()) {
-                    result.add(cell);
-                }
-            }
-        }
-        return result;
+        return getAllCells().stream().filter(c -> c.hasAWall()).toList();
     }
+
     public List<Cell> getEmptyCellsWithFourWalls() {
+        return getAllCells().stream().filter(c -> c.getWalls().hasAllWalls()).toList();
+    }
+
+    public List<Cell> getAllCells() {
+        if(cellsList == null) {
+            cellsList = getCells(null);
+        }
+        return cellsList;
+    }
+    public List<Cell> getCells(Predicate<Cell> predicate) {
         List<Cell> result = new ArrayList<>();
         for (int row = 1; row <= getHeight(); row++) {
             for (int column = 1; column <= getWidth(); column++) {
                 Cell cell = getCell(row, column);
-                if(cell.getWalls().hasAllWalls()) {
+                if (predicate == null || predicate.test(cell)) {
                     result.add(cell);
                 }
             }

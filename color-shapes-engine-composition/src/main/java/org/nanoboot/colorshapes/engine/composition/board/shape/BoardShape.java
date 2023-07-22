@@ -20,7 +20,6 @@
 
 package org.nanoboot.colorshapes.engine.composition.board.shape;
 
-import java.util.UUID;
 import org.nanoboot.colorshapes.engine.composition.utils.Composition;
 import org.nanoboot.powerframework.json.JsonObject;
 
