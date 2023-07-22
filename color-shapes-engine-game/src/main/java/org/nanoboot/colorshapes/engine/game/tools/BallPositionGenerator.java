@@ -20,13 +20,13 @@
 
 package org.nanoboot.colorshapes.engine.game.tools;
 
-import org.nanoboot.colorshapes.engine.entity.random .CSRandomGenerator;
+import org.nanoboot.colorshapes.engine.base.random.CSRandomGenerator;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
-import org.nanoboot.colorshapes.engine.game.core.GameNode;
-import org.nanoboot.colorshapes.engine.game.parts.BallPosition;
-import org.nanoboot.colorshapes.engine.game.parts.Board;
-import org.nanoboot.colorshapes.engine.game.parts.Cell;
-import org.nanoboot.colorshapes.engine.game.parts.PreviewBar;
+import org.nanoboot.colorshapes.engine.parts.base.GameNode;
+import org.nanoboot.colorshapes.engine.parts.core.BallPosition;
+import org.nanoboot.colorshapes.engine.parts.core.Board;
+import org.nanoboot.colorshapes.engine.parts.core.Cell;
+import org.nanoboot.colorshapes.engine.parts.core.PreviewBar;
 
 import java.util.ArrayList;
 import java.util.List;

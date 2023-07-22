@@ -20,11 +20,17 @@
 
 package org.nanoboot.colorshapes.engine.game.tools;
 
-import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.parts.core.Board;
+import org.nanoboot.colorshapes.engine.parts.core.PreviewBar;
+import org.nanoboot.colorshapes.engine.parts.core.BallPositioner;
+import org.nanoboot.colorshapes.engine.parts.core.TotalScore;
+import org.nanoboot.colorshapes.engine.parts.core.BallPosition;
+import org.nanoboot.colorshapes.engine.parts.core.Ball;
+import org.nanoboot.colorshapes.engine.parts.core.Cell;
+import org.nanoboot.colorshapes.engine.base.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 import org.nanoboot.colorshapes.engine.flow.event.impl.misc.EndGameEvent;
-import org.nanoboot.colorshapes.engine.game.core.GameNode;
-import org.nanoboot.colorshapes.engine.game.parts.*;
+import org.nanoboot.colorshapes.engine.parts.base.GameNode;
 import org.nanoboot.colorshapes.engine.composition.thrower.BallThrowerComposition;
 
 import java.util.List;

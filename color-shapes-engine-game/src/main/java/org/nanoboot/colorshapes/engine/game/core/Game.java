@@ -20,11 +20,15 @@
 
 package org.nanoboot.colorshapes.engine.game.core;
 
+import org.nanoboot.colorshapes.engine.parts.base.GameNode;
+import org.nanoboot.colorshapes.engine.parts.core.Board;
+import org.nanoboot.colorshapes.engine.parts.core.PreviewBar;
+import org.nanoboot.colorshapes.engine.parts.core.TotalScore;
 import org.nanoboot.colorshapes.engine.composition.GameComposition;
-import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
-import org.nanoboot.colorshapes.engine.entity.misc.Task;
-import org.nanoboot.colorshapes.engine.entity.random .CSRandomGenerator;
-import org.nanoboot.colorshapes.engine.entity.core.GameDto;
+import org.nanoboot.colorshapes.engine.base.exceptions.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.base.misc.Task;
+import org.nanoboot.colorshapes.engine.base.random .CSRandomGenerator;
+import org.nanoboot.colorshapes.engine.dto.GameDto;
 import org.nanoboot.colorshapes.engine.flow.event.core.Event;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
 import org.nanoboot.colorshapes.engine.flow.event.impl.in.CellActivatedEvent;
@@ -32,7 +36,6 @@ import org.nanoboot.colorshapes.engine.flow.event.impl.misc.NewGameEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.misc.UpdatePlayerScoreEvent;
 import org.nanoboot.colorshapes.engine.flow.event.impl.wait.WaitEvent;
 import org.nanoboot.colorshapes.engine.flow.event.types.EventDirection;
-import org.nanoboot.colorshapes.engine.game.parts.*;
 import org.nanoboot.colorshapes.engine.game.tools.*;
 import lombok.Getter;
 import lombok.Setter;

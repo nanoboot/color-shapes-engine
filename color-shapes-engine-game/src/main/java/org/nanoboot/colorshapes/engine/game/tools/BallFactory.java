@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -20,21 +20,21 @@
 
 package org.nanoboot.colorshapes.engine.game.tools;
 
-import org.nanoboot.colorshapes.engine.entity.misc.BallColour;
-import org.nanoboot.colorshapes.engine.entity.misc.BallValue;
+import org.nanoboot.colorshapes.engine.base.misc.BallColour;
+import org.nanoboot.colorshapes.engine.base.misc.BallValue;
 import org.nanoboot.colorshapes.engine.composition.factory.BallFactoryComposition;
 import org.nanoboot.colorshapes.engine.composition.factory.colors.ColourFrequencies;
 import org.nanoboot.colorshapes.engine.composition.factory.values.ValueFrequencies;
-import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
-import org.nanoboot.colorshapes.engine.entity.random .CSRandomGenerator;
+import org.nanoboot.colorshapes.engine.base.exceptions.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.base.random .CSRandomGenerator;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
-import org.nanoboot.colorshapes.engine.game.BallType;
-import org.nanoboot.colorshapes.engine.game.core.GameNode;
-import org.nanoboot.colorshapes.engine.game.parts.AutomaticBomb;
-import org.nanoboot.colorshapes.engine.game.parts.Ball;
-import org.nanoboot.colorshapes.engine.game.parts.ColoredBall;
-import org.nanoboot.colorshapes.engine.game.parts.JokerBall;
-import org.nanoboot.colorshapes.engine.game.parts.ManualBomb;
+import org.nanoboot.colorshapes.engine.parts.core.BallType;
+import org.nanoboot.colorshapes.engine.parts.base.GameNode;
+import org.nanoboot.colorshapes.engine.parts.core.AutomaticBomb;
+import org.nanoboot.colorshapes.engine.parts.core.Ball;
+import org.nanoboot.colorshapes.engine.parts.core.ColoredBall;
+import org.nanoboot.colorshapes.engine.parts.core.JokerBall;
+import org.nanoboot.colorshapes.engine.parts.core.ManualBomb;
 import org.nanoboot.powerframework.random.choicegenerators.ChoiceEntry;
 import org.nanoboot.powerframework.random.choicegenerators.ChoiceGenerator;
 import org.nanoboot.powerframework.random.choicegenerators.ProbabilityGenerator;

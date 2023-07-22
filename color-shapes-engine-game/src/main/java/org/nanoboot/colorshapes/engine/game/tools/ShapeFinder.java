@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -20,16 +20,15 @@
 
 package org.nanoboot.colorshapes.engine.game.tools;
 
-import org.nanoboot.colorshapes.engine.entity.misc.Coordination;
-import org.nanoboot.colorshapes.engine.entity.exceptions.ColorShapesEngineException;
+import org.nanoboot.colorshapes.engine.base.misc.Coordination;
+import org.nanoboot.colorshapes.engine.base.exceptions.ColorShapesEngineException;
 import org.nanoboot.colorshapes.engine.composition.shapefinder.ShapeFinderComposition;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
-import org.nanoboot.colorshapes.engine.game.BallType;
-import org.nanoboot.colorshapes.engine.game.core.GameNode;
-import org.nanoboot.colorshapes.engine.game.parts.Ball;
-import org.nanoboot.colorshapes.engine.game.parts.Board;
-import org.nanoboot.colorshapes.engine.game.parts.Cell;
-import org.nanoboot.colorshapes.engine.game.utils.Direction;
+import org.nanoboot.colorshapes.engine.parts.core.BallType;
+import org.nanoboot.colorshapes.engine.parts.base.GameNode;
+import org.nanoboot.colorshapes.engine.parts.core.Ball;
+import org.nanoboot.colorshapes.engine.parts.core.Board;
+import org.nanoboot.colorshapes.engine.parts.core.Cell;
 
 
 import org.nanoboot.colorshapes.engine.flow.event.impl.explode.ExplodeEvent;
@@ -38,6 +37,7 @@ import org.nanoboot.colorshapes.engine.flow.event.impl.wait.WaitEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.nanoboot.colorshapes.engine.parts.utils.Direction;
 
 /**
  *

@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -20,11 +20,12 @@
 
 package org.nanoboot.colorshapes.engine.game.tools;
 
+import org.nanoboot.colorshapes.engine.parts.core.BallPositionerGeneratorI;
 import org.nanoboot.colorshapes.engine.flow.event.core.EventConsumer;
-import org.nanoboot.colorshapes.engine.game.core.GameNode;
-import org.nanoboot.colorshapes.engine.game.parts.Ball;
-import org.nanoboot.colorshapes.engine.game.parts.BallPosition;
-import org.nanoboot.colorshapes.engine.game.parts.BallPositioner;
+import org.nanoboot.colorshapes.engine.parts.base.GameNode;
+import org.nanoboot.colorshapes.engine.parts.core.Ball;
+import org.nanoboot.colorshapes.engine.parts.core.BallPosition;
+import org.nanoboot.colorshapes.engine.parts.core.BallPositioner;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ import java.util.List;
  * @author <a href="mailto:robertvokac@nanoboot.org">Robert Vokac</a>
  * @since 0.0.0
  */
-public class BallPositionerGenerator extends GameNode {
+public class BallPositionerGenerator extends GameNode implements BallPositionerGeneratorI {
     private final BallFactory ballFactory;
     @Getter
     private final BallPositionGenerator ballPositionGenerator;
@@ -45,6 +46,7 @@ public class BallPositionerGenerator extends GameNode {
         this.ballFactory=ballFactory;
         this.ballPositionGenerator=ballPositionGenerator;
     }
+    @Override
     public List<BallPositioner> generate(int count) {
         List<BallPositioner> result = new ArrayList<>();
         for(int i =0;i<count;i++){
@@ -54,6 +56,11 @@ public class BallPositionerGenerator extends GameNode {
             result.add(ballPositioner);
         }
         return result;
+    }
+
+    @Override
+    public BallPosition generate() {
+        return getBallPositionGenerator().generate();
     }
 
 }

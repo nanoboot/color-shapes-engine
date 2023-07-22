@@ -21,7 +21,7 @@
 package org.nanoboot.colorshapes.engine.game.tools;
 
 import org.nanoboot.colorshapes.engine.game.core.Game;
-import org.nanoboot.colorshapes.engine.game.core.GameNode;
+import org.nanoboot.colorshapes.engine.parts.base.GameNode;
 import lombok.Getter;
 
 /**

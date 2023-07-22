@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 
 package org.nanoboot.colorshapes.engine.services.api;
 
-import org.nanoboot.colorshapes.engine.entity.core.PlayerDto;
+import org.nanoboot.colorshapes.engine.dto.PlayerDto;
 import org.nanoboot.colorshapes.engine.services.utils.RegistrationError;
 
 /**

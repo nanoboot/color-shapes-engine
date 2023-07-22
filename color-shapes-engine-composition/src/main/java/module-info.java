@@ -1,7 +1,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // color-shapes-engine: A logic game based on Color linez game.
-// Copyright (C) 2016-2022 the original author or authors.
+// Copyright (C) 2016-2023 the original author or authors.
 //
 // This program is free software; you can redistribute it and/or
 // modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ module colorshapes.engine.composition {
     requires powerframework.random;
     requires powerframework.collections;
     requires powerframework.reflection;
-    requires colorshapes.engine.entity;
+    requires colorshapes.engine.base;
     exports org.nanoboot.colorshapes.engine.composition;
     exports org.nanoboot.colorshapes.engine.composition.utils;
     exports org.nanoboot.colorshapes.engine.composition.factory;
